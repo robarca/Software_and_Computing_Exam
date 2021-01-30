@@ -52,6 +52,8 @@ This model is based on the connection between these files:
 
 **README** : it contains a brief theoretical introduction, the characteristics of the code and of the variables used and, finally, the instructions to follow to run the model.
 
+**figures_examle**: it contains two plots for the Example 2 of the README.md
+
 ## General Variables
 
 To run the model it's very importanto to understand what the variables in the _Configuration.ini_ file rapresent:
@@ -62,7 +64,7 @@ To run the model it's very importanto to understand what the variables in the _C
 
 **Cross_section_abs_gas** defines the capacity of the atmosphere to absorb the incoming radiation. It's used to compute the optical depth;
 
-**Abs_coeff_cloud** defines the capacity of the cloud to absorb with the radiation;
+**Abs_coeff_cloud** defines the capacity of the cloud to absorb the radiation;
 
 **Top_level** is the maximum hight that is rapresented on the final plots;
 
@@ -74,13 +76,17 @@ To run the model it's very importanto to understand what the variables in the _C
 
 **vertical_height_scale** is the scale parameter for the exponential density profile;
 
+## Installation
+
+
+    git clone https://github.com/robarca/Software_and_Computing_Exam
+    cd Software_and_Computing_Exam
+    
 ## How to run the model
 
 If an user wants to run the model, there are same simple steps to follow:
 
-- The entire folder can be downloaded directly from https://github.com/robarca/Software_and_Computing_Exam.git 
-
-- It's suggested to check beforehan that the parameters are correct for the type of analysis to be carried out (so in this case the first file to edit and then run is the [Make_Configuration.py](https://github.com/robarca/Software_and_Computing_Exam/blob/master/Make_Configuration.py))
+- It's suggested to check beforehand that the parameters are correct for the type of analysis to be carried out (so in this case the first file to edit and then run is the [Make_Configuration.py](https://github.com/robarca/Software_and_Computing_Exam/blob/master/Make_Configuration.py))
 
 - Finally, it's possible to run the model with the file [WFT_Profile.py](https://github.com/robarca/Software_and_Computing_Exam/blob/master/WFT_Profile.py)
 
@@ -119,5 +125,5 @@ In this example a further interesting use of the model is shown: the comparison 
 
 ![fig4](https://raw.githubusercontent.com/robarca/Software_and_Computing_Exam/master/fig_example/Transmittances%20in%20clear%20and%20cloud%20sky.png)
 
-As it is possible to understand from the two plots, the transmittance profile for clear sky (blu lines) don't change; while you can see a big difference in the cloudy sky profiles (red lines) due to the fact that if the cloud is higher there's a strong reduction of the radiance at that quote which means that the underlying layers won't recieve the same incoming enrgy as the low level cloud case. 
+As it is possible to understand from the two plots, the transmittance profiles for clear sky (blu lines) don't change; while you can see a big difference in the cloudy sky profiles (red lines) due to the fact that if the cloud is higher there's a strong reduction of the radiance at that quote which means that the underlying layers won't recieve the same incoming enrgy as the low level cloud case. 
  
