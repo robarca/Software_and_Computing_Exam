@@ -32,25 +32,31 @@ The role of the weighting function can be understood thanks to next example grap
 
 The left panel displays the vertical profile of transmissivity and the right panel displays the weighting functions, computed as showen above. The various colors denote 4 different absorption cross sections _k_ while the temperature and concentration profiles are the same.
 The blu line is showing a situation that could arise if it's considered an atmospheric window: transmissivity doesn't change a lot, at the surface it is 0.9, which implies that 90% of the energy from the surface is reaching the top of the atmosphere. Watching at the corrispective weighting function profile, it's possible to see that most energy comes from the surface, but also a little from the atmosphere.
-Moving towards more absorbing wave numbers (green curve) the transmissivity decreases and only 35% of the energy that is going out from the surface reaches the top of the atmosphere, while the weighting function shows that most of the energy comes from the layers close to the surface, but it also arrives in minor part from layers close to 20 km. For the red and blue curves the surface transmissivity is zero and the associated weighting functions have a maximum in correspondence the inflection of the transmissivity curve, which indicates where the signal mainly comes from.
+Moving towards more absorbing wave numbers (green curve) the transmissivity decreases and only 25% of the energy that is going out from the surface reaches the top of the atmosphere, while the weighting function shows that most of the energy comes from the layers close to the surface, but it also arrives in minor part from layers close to 20 km. For the red and blue curves the surface transmissivity is zero and the associated weighting functions have a maximum in correspondence the inflection of the transmissivity curve, which indicates where the signal mainly comes from.
 
 ## Code Structure
 
 This model is based on the connection between these files:
 
 **WFT_Profile.py** : it contains the main program and it's the code that users need to launch;
+
 **WFT_Functions.py** : it contains the principal functions used in the model; 
+
 **Make_Configuration.py** : it creates the file _Configuration.ini_;
+
 **Configuration.ini** : it contains the values of the general input variables this model needs;
+
 **OUTPUT** : it is the folder where final plots are stored;
+
 **WFT_Testing.py** : it contains some tests for the functions used in the model to be sure they work properly;
+
 **README** : it contains a brief theoretical introduction, the characteristics of the code and of the variables used and, finally, the instructions to follow to run the model.
 
 ## General Variables
 
 To run the model it's very importanto to understand what the variables in the _Configuration.ini_ file rapresent:
 
-**Bottom_clod** rapresents the quote [km] of the cloud's base. It must be a value between the top and the bottom of the atmosphere (difined later);
+**Bottom_cloud** rapresents the quote [km] of the cloud's base. It must be a value between the top and the bottom of the atmosphere (difined later);
 
 **Top_cloud** rapresents the quote [km] of the cloud's base. As above, it must be a value between the top and the bottom of the atmosphere (difined later);
 
@@ -68,7 +74,35 @@ To run the model it's very importanto to understand what the variables in the _C
 
 **vertical_height_scale** is the scale parameter for the exponential density profile;
 
+## How to run the model
 
+If an user wants to run the model, there are same simple steps to follow:
 
+- The entire folder can be downloaded directly from https://github.com/robarca/Software_and_Computing_Exam.git 
 
+- It's suggested to check beforehan that the parameters are correct for the type of analysis to be carried out (so in this case the first file to edit and then run is the [Configuration.ini](https://github.com/robarca/Software_and_Computing_Exam/blob/master/Configuration.ini))
 
+- Finally, it's possible to run the model with the file [WFT_Profile.py](https://github.com/robarca/Software_and_Computing_Exam/blob/master/WFT_Profile.py)
+
+## Output's storage
+
+Once the model has worked correctly, the final plots are saved in the [OUTPUT](https://github.com/robarca/Software_and_Computing_Exam/tree/master/OUTPUT) folder.
+
+Here it's possible to find three figures:
+
+- [Transmittances in clear and cloud sky.png](https://github.com/robarca/Software_and_Computing_Exam/blob/master/OUTPUT/Transmittances%20in%20clear%20and%20cloud%20sky.png) which is a plot showing the tranmittance profiles for clear and cloudy sky;
+- [Weighting functions for clear and cloudy sky.png](https://github.com/robarca/Software_and_Computing_Exam/blob/master/OUTPUT/Weighting%20functions%20for%20clear%20and%20cloudy%20sky.png) shows the weighting function profiles for clear and cloudy sky;
+- [Log weighting functions for clear and cloudy sky.png](https://github.com/robarca/Software_and_Computing_Exam/blob/master/OUTPUT/Log%20weighting%20functions%20for%20clear%20and%20cloudy%20sky.png) which rapresents the weighting functions for clear and cloudy sky in semi-logarithmic scale.
+
+## Example: Low Level Clouds 
+
+In the next two plots are shown the transmittance profile (top chart) and the weighting function profile (below chart) for a low stratus cloud, with base at 1 km (i.e. _bottom_cloud_=1) and top at 2 km (i.e. _top_cloud_=2) . 
+
+_Cross_section_abs_gas_ = 0.003
+_Abs_coeff_cloud_ = 5
+
+![fig1](https://raw.githubusercontent.com/robarca/Software_and_Computing_Exam/master/OUTPUT/Transmittances%20in%20clear%20and%20cloud%20sky.png)
+
+![fig2](https://raw.githubusercontent.com/robarca/Software_and_Computing_Exam/master/OUTPUT/Weighting%20functions%20for%20clear%20and%20cloudy%20sky.png)
+
+Here it's possible to see that the code shows the role of the cloud between 1 and 2 km. As it's showen in transimattance's profile, considering cloudy sky (red line), there is a strong reduction in concomitance of the cloud, due to the absorption by the same of part of the incoming radiation. On the other hand, whatching the waighting function profile for cloudy sky (yellow line) it's confirmed that most of the energy is released exactly from the height where the cloud is.
