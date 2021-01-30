@@ -80,7 +80,7 @@ If an user wants to run the model, there are same simple steps to follow:
 
 - The entire folder can be downloaded directly from https://github.com/robarca/Software_and_Computing_Exam.git 
 
-- It's suggested to check beforehan that the parameters are correct for the type of analysis to be carried out (so in this case the first file to edit and then run is the [Configuration.ini](https://github.com/robarca/Software_and_Computing_Exam/blob/master/Configuration.ini))
+- It's suggested to check beforehan that the parameters are correct for the type of analysis to be carried out (so in this case the first file to edit and then run is the [Make_Configuration.py](https://github.com/robarca/Software_and_Computing_Exam/blob/master/Make_Configuration.py))
 
 - Finally, it's possible to run the model with the file [WFT_Profile.py](https://github.com/robarca/Software_and_Computing_Exam/blob/master/WFT_Profile.py)
 
