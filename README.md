@@ -34,3 +34,41 @@ The left panel displays the vertical profile of transmissivity and the right pan
 The blu line is showing a situation that could arise if it's considered an atmospheric window: transmissivity doesn't change a lot, at the surface it is 0.9, which implies that 90% of the energy from the surface is reaching the top of the atmosphere. Watching at the corrispective weighting function profile, it's possible to see that most energy comes from the surface, but also a little from the atmosphere.
 Moving towards more absorbing wave numbers (green curve) the transmissivity decreases and only 35% of the energy that is going out from the surface reaches the top of the atmosphere, while the weighting function shows that most of the energy comes from the layers close to the surface, but it also arrives in minor part from layers close to 20 km. For the red and blue curves the surface transmissivity is zero and the associated weighting functions have a maximum in correspondence the inflection of the transmissivity curve, which indicates where the signal mainly comes from.
 
+## Code Structure
+
+This model is based on the connection between these files:
+
+**WFT_Profile.py** : it contains the main program and it's the code that users need to launch;
+**WFT_Functions.py** : it contains the principal functions used in the model; 
+**Make_Configuration.py** : it creates the file _Configuration.ini_;
+**Configuration.ini** : it contains the values of the general input variables this model needs;
+**OUTPUT** : it is the folder where final plots are stored;
+**WFT_Testing.py** : it contains some tests for the functions used in the model to be sure they work properly;
+**README** : it contains a brief theoretical introduction, the characteristics of the code and of the variables used and, finally, the instructions to follow to run the model.
+
+## General Variables
+
+To run the model it's very importanto to understand what the variables in the _Configuration.ini_ file rapresent:
+
+**Bottom_clod** rapresents the quote [km] of the cloud's base. It must be a value between the top and the bottom of the atmosphere (difined later);
+
+**Top_cloud** rapresents the quote [km] of the cloud's base. As above, it must be a value between the top and the bottom of the atmosphere (difined later);
+
+**Cross_section_abs_gas** defines the capacity of the atmosphere to absorb the incoming radiation. It's used to compute the optical depth;
+
+**Abs_coeff_cloud** defines the capacity of the cloud to absorb with the radiation;
+
+**Top_level** is the maximum hight that is rapresented on the final plots;
+
+**z_begin** is the quote of the bottom of the portion of the considered atmosphere. If it's equal to 0, it corresponds to the Earth surafce;
+
+**z_end** is the quote of the top of the portion of the considered atmosphere;
+
+**z_step** rapresents the thickness of each layer considered between the top and the bottom of the atmosphere;
+
+**vertical_height_scale** is the scale parameter for the exponential density profile;
+
+
+
+
+
