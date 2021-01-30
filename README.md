@@ -94,7 +94,7 @@ Here it's possible to find three figures:
 - [Weighting functions for clear and cloudy sky.png](https://github.com/robarca/Software_and_Computing_Exam/blob/master/OUTPUT/Weighting%20functions%20for%20clear%20and%20cloudy%20sky.png) shows the weighting function profiles for clear and cloudy sky;
 - [Log weighting functions for clear and cloudy sky.png](https://github.com/robarca/Software_and_Computing_Exam/blob/master/OUTPUT/Log%20weighting%20functions%20for%20clear%20and%20cloudy%20sky.png) which rapresents the weighting functions for clear and cloudy sky in semi-logarithmic scale.
 
-## Example: Low Level Clouds 
+## Example 1: Low Level Clouds 
 
 In the next two plots are shown the transmittance profile (top chart) and the weighting function profile (below chart) for a low stratus cloud, with base at 1 km (i.e. _bottom_cloud_=1) and top at 2 km (i.e. _top_cloud_=2) . 
 
@@ -106,3 +106,18 @@ _Abs_coeff_cloud_ = 5
 ![fig2](https://raw.githubusercontent.com/robarca/Software_and_Computing_Exam/master/OUTPUT/Weighting%20functions%20for%20clear%20and%20cloudy%20sky.png)
 
 Here it's possible to see that the code shows the role of the cloud between 1 and 2 km. As it's showen in transimattance's profile, considering cloudy sky (red line), there is a strong reduction in concomitance of the cloud, due to the absorption by the same of part of the incoming radiation. On the other hand, whatching the waighting function profile for cloudy sky (yellow line) it's confirmed that most of the energy is released exactly from the height where the cloud is.
+
+## Example 2: Low vs High-Level Clouds Transmittances
+
+In this example a further interesting use of the model is shown: the comparison between the transmittance profiles considering clouds at different altitudes. The  values of _Cross_section_abs_gas_ and _Abs_coeff_cloud_ are the same.
+
+- In the first plot is shown an atmosphere having a cloud between 1 and 2 km:
+
+![fig3](https://raw.githubusercontent.com/robarca/Software_and_Computing_Exam/master/fig_example/low_transmittance.png)
+
+- In the second one there's a cloud between 12 and 15 km:
+
+![fig4](https://raw.githubusercontent.com/robarca/Software_and_Computing_Exam/master/fig_example/Transmittances%20in%20clear%20and%20cloud%20sky.png)
+
+As it is possible to understand from the two plots, the transmittance profile for clear sky (blu lines) don't change; while you can see a big difference in the cloudy sky profiles (red lines) due to the fact that if the cloud is higher there's a strong reduction of the radiance at that quote which means that the underlying layers won't recieve the same incoming enrgy as the low level cloud case. 
+ 
