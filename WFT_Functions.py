@@ -37,7 +37,7 @@ def z_vector(z1,dz,z2):
     if z2 < 0 or z2 <= z1:
          raise ValueError (
                 'The highest quote must be greater than the lowest one!')
-    dz=round(dz,3)
+    
     z = np.arange(z1,z2,dz)
     
     return z
