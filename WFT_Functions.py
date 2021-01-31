@@ -5,7 +5,7 @@
 
 import numpy as np
 
-def z_vector(z1,dz,z2):
+def z_vector(z1,dz,z2,top):
     
     """ This function computes the heigth vector between z1 and z2.
     
@@ -19,7 +19,8 @@ def z_vector(z1,dz,z2):
                         
             dz          : step value of the vector 
             
-        
+            top	 : top level of the atmosphere for the final plots
+            
         OUTPUT:
             
             z           : altitude vector of the portion of atmosphere 
@@ -37,6 +38,9 @@ def z_vector(z1,dz,z2):
     if z2 < 0 or z2 <= z1:
          raise ValueError (
                 'The highest quote must be greater than the lowest one!')
+    if  top > z2:
+         raise ValueError (
+                'The top of the plotted atmosphere must be smaller than the top of the analyzed atmosphere')
     
     z = np.arange(z1,z2,dz)
     
