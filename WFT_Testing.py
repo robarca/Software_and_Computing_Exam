@@ -17,25 +17,25 @@ from hypothesis import given
 
 def test_z_vector(z1,dz,z2):
     
-    z = fn.z_vector(z1,dz,z2)
+    z = fn.z_vector(z1,dz,z2,20)
         
     with pytest.raises(ValueError):
-       fn.z_vector(-1,0.01,5)
+       fn.z_vector(-1,0.01,5,20)
        
     #check if a ValueError arises if z2 is smaller then z1
     
     with pytest.raises(ValueError):
-       fn.z_vector(10,0.05,5)
+       fn.z_vector(10,0.05,5,20)
        
     #check if a ValueError arises if dz in negative
     
     with pytest.raises(ValueError):
-       fn.z_vector(1,-0.05,5)
+       fn.z_vector(1,-0.05,5,20)
     
     #check if a ValueError arises if dz is not in the right range
     
     with pytest.raises(ValueError):
-       fn.z_vector(1,10,5)
+       fn.z_vector(1,10,5,20)
     #check if the z output vector exists
     
     assert(len(z) >= 1)
@@ -48,7 +48,7 @@ def test_z_vector(z1,dz,z2):
 
 def test_normalized_density_profile(z1,dz,z2,h):
     
-    z = fn.z_vector(z1,dz,z2)
+    z = fn.z_vector(z1,dz,z2,20)
     
     rho_n = fn.normalized_density_profile(z,h)
        
@@ -80,7 +80,7 @@ def test_optical_depth_and_transmittances(z1,z2,h,b,t,csg,coc):
     
     dz=0.5
     
-    z = fn.z_vector(z1,dz,z2)
+    z = fn.z_vector(z1,dz,z2,20)
       
     rho_n = fn.normalized_density_profile(z,h)
       
@@ -137,7 +137,7 @@ def test_weighting_functions(z1,z2,h,b,t):
     
     coc=2
     
-    z = fn.z_vector(z1,dz,z2)
+    z = fn.z_vector(z1,dz,z2,20)
       
     rho_n = fn.normalized_density_profile(z,h)
     
