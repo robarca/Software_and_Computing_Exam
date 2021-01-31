@@ -123,11 +123,11 @@ def optical_depth(z,dz,b,t,csg,coc,rho_n):
     
     if z[0] > b:
         raise ValueError (
-    		'The bottom of the cloud cannot be smaller than the bottom of atmosphere')
+    		'The bottom of the cloud cannot be smaller than the bottom of atmosphere (0)')
     
     if t > z[len(z)-1]:
         raise ValueError (
-    		'The top of the cloud cannot be greater than the top of atmosphere')
+    		'The top of the cloud cannot be greater than the top of atmosphere (50)')
     
     if b >= t:
     	raise ValueError (
