@@ -25,25 +25,24 @@ parser = ConfigParser()
 parser.read("Configuration.ini")
 
 b = parser.getfloat("General_Variables", "Bottom_cloud",
-                         fallback = 5)
+                         fallback = 1)
 t = parser.getfloat("General_Variables", "Top_cloud",
-                         fallback = 8)
+                         fallback = 2)
 csg = parser.getfloat("General_Variables", "Cross_section_abs_gas",
-                         fallback = 0.1)
+                         fallback = 0.2)
 coc = parser.getfloat("General_Variables", "Abs_coeff_cloud",
                          fallback = 5)
 top = parser.getfloat("General_Variables", "Top_level",
-                         fallback = 30)
-z1 = parser.getfloat("General_Variables", "z_begin",
-                         fallback = 0)
-z2 = parser.getfloat("General_Variables", "z_end",
-                         fallback = 50)
-dz = parser.getfloat("General_Variables", "z_step",
-                         fallback = 0.005)
+                         fallback = 20)
 h = parser.getfloat("General_Variables", "vertical_height_scale",
                          fallback = 7)
+#Definition of the base and the top of the considered atmosphere
+z1 = 0
+z2 = 50
+dz= 0.005
+#These are the values of the atmosphere where there's LTE, so z1=0 is the Earth surface and z2=50 is the top of the atmosphere
 
-z = fn.z_vector(z1, dz, z2)
+z = fn.z_vector(z1, dz, z2, top)
 
 rho_n= fn.normalized_density_profile(z,h)
 
