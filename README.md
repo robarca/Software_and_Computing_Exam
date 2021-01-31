@@ -2,7 +2,10 @@
 
 This is a simple model to compute the weighting functions and transmittances in clear air and in presence of a cloud layer. 
 
-Here, it is assumed that clouds only absorb and emit (i.e there is no scattering), that the system is in Local Thermodynamic Equilibrium (LTE), so that Kirchhoff's law is still valid, and that it's considered a plane-parallel atmosphere using height (_z_) as vertical coordinate .
+Here, it is assumed that:
+- Clouds only absorb and emit (i.e there is no scattering);
+- The system is in Local Thermodynamic Equilibrium (LTE), so that Kirchhoff's law is still valid, and the base the atmosphere is at 0 km and the top at 50 km;
+- It's considered a plane-parallel atmosphere using height (_z_) as vertical coordinate .
 
 Considering the optical depth, defined as :
 
@@ -52,27 +55,21 @@ This model is based on the connection between these files:
 
 **README** : it contains a brief theoretical introduction, the characteristics of the code and of the variables used and, finally, the instructions to follow to run the model.
 
-**figures_examle**: it contains two plots for the Example 2 of the README.md
+**figures_example**: it contains two plots for the Example 2 of the README.md
 
 ## General Variables
 
 To run the model it's very importanto to understand what the variables in the _Configuration.ini_ file rapresent:
 
-**Bottom_cloud** rapresents the quote [km] of the cloud's base. It must be a value between the top and the bottom of the atmosphere (difined later);
+**Bottom_cloud** rapresents the quote [km] of the cloud's base. It must be a value between the top and the bottom of the atmosphere (defined later);
 
-**Top_cloud** rapresents the quote [km] of the cloud's base. As above, it must be a value between the top and the bottom of the atmosphere (difined later);
+**Top_cloud** rapresents the quote [km] of the cloud's base. As above, it must be a value between the top and the bottom of the atmosphere (defined later);
 
 **Cross_section_abs_gas** defines the capacity of the atmosphere to absorb the incoming radiation. It's used to compute the optical depth;
 
 **Abs_coeff_cloud** defines the capacity of the cloud to absorb the radiation;
 
-**Top_level** is the maximum hight that is rapresented on the final plots;
-
-**z_begin** is the quote of the bottom of the portion of the considered atmosphere. If it's equal to 0, it corresponds to the Earth surafce;
-
-**z_end** is the quote of the top of the portion of the considered atmosphere;
-
-**z_step** rapresents the thickness of each layer considered between the top and the bottom of the atmosphere;
+**Top_level** is the maximum height that is rapresented on the final plots;
 
 **vertical_height_scale** is the scale parameter for the exponential density profile;
 
@@ -119,7 +116,7 @@ _Abs_coeff_cloud_ = 5
 
 ![fig2](https://raw.githubusercontent.com/robarca/Software_and_Computing_Exam/master/OUTPUT/Weighting%20functions%20for%20clear%20and%20cloudy%20sky.png)
 
-Here it's possible to see that the code shows the role of the cloud between 1 and 2 km. As it's showen in transimattance's profile, considering cloudy sky (red line), there is a strong reduction in concomitance of the cloud, due to the absorption by the same of part of the incoming radiation. On the other hand, whatching the waighting function profile for cloudy sky (yellow line) it's confirmed that most of the energy is released exactly from the height where the cloud is.
+Here it's possible to see that the code shows the role of the cloud between 1 and 2 km. As it's shown in transimattance's profile, considering cloudy sky (red line), there is a strong reduction in concomitance of the cloud, due to the absorption by the same of part of the incoming radiation. On the other hand, whatching the waighting function profile for cloudy sky (yellow line) it's confirmed that most of the energy is released exactly from the height where the cloud is.
 
 ## Example 2: Low vs High-Level Clouds Transmittances
 
@@ -133,5 +130,5 @@ In this example a further interesting use of the model is shown: the comparison 
 
 ![fig4](https://raw.githubusercontent.com/robarca/Software_and_Computing_Exam/master/fig_example/Transmittances%20in%20clear%20and%20cloud%20sky.png)
 
-As it is possible to understand from the two plots, the transmittance profiles for clear sky (blu lines) don't change; while you can see a big difference in the cloudy sky profiles (red lines) due to the fact that if the cloud is higher there's a strong reduction of the radiance at that quote which means that the underlying layers won't recieve the same incoming enrgy as the low level cloud case. 
+As it is possible to understand from the two plots, the transmittance profiles for clear sky (blu lines) don't change; while you can see a big difference in the cloudy sky profiles (red lines) due to the fact that if the cloud is higher there's a strong reduction of the radiance at that quote which means that the underlying layers won't recieve the same incoming energy as the low level cloud case. 
  
