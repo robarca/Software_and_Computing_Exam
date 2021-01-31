@@ -128,7 +128,11 @@ def optical_depth(z,dz,b,t,csg,coc,rho_n):
     if t > z[len(z)-1]:
         raise ValueError (
     		'The top of the cloud cannot be greater than the top of atmosphere')
-    		    		
+    
+    if b >= t:
+    	raise ValueError (
+    		'The top of the cloud must be greater than the bottom')
+    			    		
     # Initialization of molecular optical depth vector
     
     lod = np.zeros(len(z))
