@@ -61,9 +61,9 @@ This model is based on the connection between these files:
 
 To run the model it's very importanto to understand what the variables in the _Configuration.ini_ file rapresent:
 
-**Bottom_cloud** rapresents the quote [km] of the cloud's base. It must be a value between the top and the bottom of the atmosphere (defined later);
+**Bottom_cloud** rapresents the quote [km] of the cloud's base. It must be a value between the top and the bottom of the atmosphere (rispectively 50 and 0);
 
-**Top_cloud** rapresents the quote [km] of the cloud's base. As above, it must be a value between the top and the bottom of the atmosphere (defined later);
+**Top_cloud** rapresents the quote [km] of the cloud's base. As above, it must be a value between the top and the bottom of the atmosphere (rispectively 50 and 0);
 
 **Cross_section_abs_gas** defines the capacity of the atmosphere to absorb the incoming radiation. It's used to compute the optical depth;
 
