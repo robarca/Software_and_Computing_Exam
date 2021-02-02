@@ -49,7 +49,7 @@ This model is based on the connection between these files:
 
 **Configuration.ini** : it contains the values of the general input variables this model needs;
 
-**OUTPUT** : it is the folder where final plots are stored;
+**OUTPUT** : it is the folder where final plots and the .txt files are stored;
 
 **WFT_Testing.py** : it contains some tests for the functions used in the model to be sure they work properly;
 
@@ -79,16 +79,19 @@ To run the model it's very importanto to understand what the variables in the _C
     git clone https://github.com/robarca/Software_and_Computing_Exam
     cd Software_and_Computing_Exam
     
+To launch the model the following libraries are previously required:
+
+- numpy             version 1.19.2
+- matplotlib        version 3.3.2
+- pytest            version 6.2.1
+- hypothesis        vesion 6.1.0
+
 ## How to run the model
 
 If an user wants to run the model, there are same simple steps to follow:
 
-- It's suggested to check beforehand that the parameters are correct for the type of analysis to be carried out (so in this case the first file to edit and then run is the [Make_Configuration.py](https://github.com/robarca/Software_and_Computing_Exam/blob/master/Make_Configuration.py))
+- It's suggested to check beforehand that the parameters are correct for the type of analysis to be carried out (so in this case the first file to edit is the [Configuration.ini](https://github.com/robarca/Software_and_Computing_Exam/blob/master/Configuration.ini))
 
-i.e for Linux users:
-
-        python3 Make_Configuration.py
-        
 - Finally, it's possible to run the model with the file [WFT_Profile.py](https://github.com/robarca/Software_and_Computing_Exam/blob/master/WFT_Profile.py)
 
 i.e for Linux users:
@@ -104,6 +107,11 @@ Here it's possible to find three figures:
 - [Transmittances in clear and cloud sky.png](https://github.com/robarca/Software_and_Computing_Exam/blob/master/OUTPUT/Transmittances%20in%20clear%20and%20cloud%20sky.png) which is a plot showing the tranmittance profiles for clear and cloudy sky;
 - [Weighting functions for clear and cloudy sky.png](https://github.com/robarca/Software_and_Computing_Exam/blob/master/OUTPUT/Weighting%20functions%20for%20clear%20and%20cloudy%20sky.png) shows the weighting function profiles for clear and cloudy sky;
 - [Log weighting functions for clear and cloudy sky.png](https://github.com/robarca/Software_and_Computing_Exam/blob/master/OUTPUT/Log%20weighting%20functions%20for%20clear%20and%20cloudy%20sky.png) which rapresents the weighting functions for clear and cloudy sky in semi-logarithmic scale.
+
+And two file txt with plotted data stored, separately, for the clear sky and the cloudy sky case:
+
+- [Clear_Sky.txt](https://github.com/robarca/Software_and_Computing_Exam/blob/master/OUTPUT/Clear_Sky.txt);
+- [Cloudy_Sky.txt](https://github.com/robarca/Software_and_Computing_Exam/blob/master/OUTPUT/Cloudy_Sky.txt);
 
 ## Example 1: Low Level Clouds 
 
