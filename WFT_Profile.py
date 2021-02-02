@@ -129,3 +129,53 @@ leg = plt.legend()
 # Saving figure in the same folder of code
 
 fig_3.savefig('OUTPUT/Weighting functions for clear and cloudy sky.png')
+
+output_path = parser.get('Output_Path', 'output_graph',
+                         fallback = './OUTPUT/')
+                         
+def clear_save_txt():
+    
+    """ This function saves the values of computed transmittances
+        and weighting functions for clear sky in a txt file.                 
+        The output is then stored in the same folder of the plots (./OUTPUT)
+                     
+                        
+         OUTPUT:
+            
+             Clear_Sky.txt    : file containing values of height, transmittance
+             			 and wighting function for clear sky
+             
+                          
+    """
+    file_title = 'Clear_Sky'
+    output_txt = output_path + file_title
+    header_file = 'Height[km]  Transmittance  Weighting_Function'
+    
+    np.savetxt(f'{output_txt}.txt',  np.c_[z, clear_t, weight_clear], fmt="%f", 
+               delimiter="        ", header = header_file)
+               
+clear_save_txt()
+
+def cloudy_save_txt():
+    
+    """ This function saves the values of computed transmittances
+        and weighting functions for cloudy sky in a txt file.                 
+        The output is then stored in the same folder of the plots (./OUTPUT)
+                     
+                        
+         OUTPUT:
+            
+             Cloudy_Sky.txt    : file containing values of height, transmittance
+             			  and wighting function for clear sky
+             
+                          
+    """
+    file_title = 'Cloudy_Sky'
+    output_txt = output_path + file_title
+    header_file = 'Height[km]  Transmittance  Weighting_Function'
+    
+    np.savetxt(f'{output_txt}.txt',  np.c_[z, cloudy_t, weight_cloudy], fmt="%f", 
+               delimiter="        ", header = header_file)
+               
+cloudy_save_txt()
+
