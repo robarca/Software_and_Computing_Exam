@@ -31,13 +31,13 @@ def z_vector(z1,dz,z2,top):
          raise ValueError (
                 'dz is not correct!')
                 
-    if  z1 < 0:
+    if  z1 != 0:
          raise ValueError (
-                'The starting quote must be, at least, 0!')
+                'The starting quote must be 0!')
          
-    if z2 < 0 or z2 <= z1:
+    if z2 != 50:
          raise ValueError (
-                'The highest quote must be greater than the lowest one!')
+                'The highest quote must be 50!')
     if  top > z2:
          raise ValueError (
                 'The top of the plotted atmosphere must be smaller than the top of the analyzed atmosphere')
@@ -132,7 +132,11 @@ def optical_depth(z,dz,b,t,csg,coc,rho_n):
     if b >= t:
     	raise ValueError (
     		'The top of the cloud must be greater than the bottom')
-    			    		
+    
+    if csg <= 0 or coc <= 0:
+    	raise ValueError (
+    		'The cross section must be positive')
+    					    		
     # Initialization of molecular optical depth vector
     
     lod = np.zeros(len(z))
@@ -210,7 +214,7 @@ def TOA_transmittances(lod, loc, z):
     
     #check if transmittances values are reasonable
     
-    for i in range(1,len(clear_t)):
+    for i in range(0,len(clear_t)-1):
     	if (clear_t[i]<0) or (clear_t[i]>1):
     		raise ValueError (
     		'Transmittance must be between 0 and 1')
@@ -255,5 +259,6 @@ def weighting_function(clear_t, cloudy_t, z, dz):
          weight_cloudy[i] = (cloudy_t[i]-cloudy_t[i-1])/dz
      
     return weight_clear, weight_cloudy
-    
+
+
     
