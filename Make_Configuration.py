@@ -9,11 +9,11 @@ from configparser import ConfigParser
 config = ConfigParser()
 
 config["General_Variables"] = {   
-    "Bottom_cloud" : "10",
-    "Top_cloud" : "15",
-    "Cross_section_abs_gas" : "0.03",
-    "Abs_coeff_cloud" : "2",
-    "Top_level" : "20",
+    "Bottom_cloud" : "5",
+    "Top_cloud" : "10",
+    "Cross_section_abs_gas" : "0.02",
+    "Abs_coeff_cloud" : "5",
+    "Top_level" : "25",
     "vertical_height_scale" : "7"
     }
 
