@@ -81,10 +81,10 @@ To run the model it's very importanto to understand what the variables in the _C
     
 To launch the model the following libraries are previously required:
 
-- numpy             version 1.19.2
-- matplotlib        version 3.3.2
-- pytest            version 6.2.1
-- hypothesis        vesion 6.1.0
+- numpy             _(at least version 1.19.2)_
+- matplotlib        _(at least version 3.3.2)_
+- pytest            _(at least version 6.2.1)_
+- hypothesis        _(at least vesion 6.1.0)_
 
 ## How to run the model
 
